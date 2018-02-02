@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="UsingEventAggregator.Views.HomePage"
+	         BackgroundColor="White" Padding="20"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:UsingEventAggregator;assembly=UsingEventAggregator"
+             xmlns:viewModels="clr-namespace:UsingEventAggregator.ViewModels;assembly=UsingEventAggregator"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=viewModels:HomePageViewModel,IsDesignTimeCreatable=True}">
+	<ContentPage.Content>
+		<Frame HasShadow="true" VerticalOptions="Center">
+			<StackLayout>
+				<Label Text="{Binding Title}" HorizontalTextAlignment="Center" />
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="50">
+					<Label Text="Isn't this fun?" HorizontalOptions="FillAndExpand" />
+					<Switch IsToggled="{Binding IsFun}" HorizontalOptions="End" IsEnabled="false"/>
+				</StackLayout>
+				<Button Text="Provide Feedback" Command="{Binding EntryCommand}" />
+				<Button Text="Back" Command="{Binding GoBackCommand}" />
+			</StackLayout>
+		</Frame>
+	</ContentPage.Content>
+</ContentPage>
