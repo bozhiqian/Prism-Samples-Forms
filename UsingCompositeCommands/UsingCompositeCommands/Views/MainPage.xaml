@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsingCompositeCommands.Views.MainPage"
+             xmlns:local="clr-namespace:UsingCompositeCommands.Views"
+             Title="{Binding Title}"
+             Padding="20"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:UsingCompositeCommands.ViewModels;assembly=UsingCompositeCommands"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:MainPageViewModel,IsDesignTimeCreatable=True}">
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Save All" Command="{Binding ApplicationCommands.SaveCommand}"/>
+        <ToolbarItem Text="Reset" Command="{Binding ApplicationCommands.ResetCommand}"/>
+    </TabbedPage.ToolbarItems>
+
+    <local:TabA />
+    <local:TabB />
+    <local:TabC />
+
+</TabbedPage>
