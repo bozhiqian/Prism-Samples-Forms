@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:TabbedNavigation.Views"
+            Title="{Binding Title}"
+            x:Class="TabbedNavigation.Views.EventInitializingTabbedPage"
+            Padding="20"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:vm="clr-namespace:TabbedNavigation.ViewModels;assembly=TabbedNavigation"
+            mc:Ignorable="d"
+            d:DataContext="{d:DesignInstance Type=vm:EventInitializingTabbedPageViewModel,IsDesignTimeCreatable=True}">
+    <TabbedPage.Children>
+        <local:ViewA Title="View A" />
+        <local:ViewB Title="View B" />
+        <local:ViewC Title="View C" />
+    </TabbedPage.Children>
+</TabbedPage>
