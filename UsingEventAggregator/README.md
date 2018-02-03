@@ -1,5 +1,5 @@
 # Using EventAggregator
-#####This is a new implementation with the same functions as the original sample "[Using EventAggregator](https://github.com/PrismLibrary/Prism-Samples-Forms/tree/master/UsingEventAggregator)". Due to some old nuget packages and lagacy projects from original solution, upgrading from orignial repository might take more work so I create new solution instead. 
+This is a new implementation with the same functions as the original sample "[Using EventAggregator](https://github.com/PrismLibrary/Prism-Samples-Forms/tree/master/UsingEventAggregator)". Due to some old nuget packages and lagacy projects from original solution, upgrading from orignial repository might take more work so I create new solution instead. 
 
 **Note:** The rcommended minimum version of Visual Studio 2017 is v15.4.2
 

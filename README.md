@@ -1,6 +1,6 @@
 # Prism Samples Forms
 
-#####This is a new implementation with the same functions as the original sample "[Prism Samples Forms](https://github.com/PrismLibrary/Prism-Samples-Forms)". Due to some old nuget packages and lagacy projects from original solution, upgrading from orignial repository might take more work so I create new solution instead. 
+This is a new implementation with the same functions as the original sample "[Prism Samples Forms](https://github.com/PrismLibrary/Prism-Samples-Forms)". Due to some old nuget packages and lagacy projects from original solution, upgrading from orignial repository might take more work so I create new solution instead. 
 
 
 ----------

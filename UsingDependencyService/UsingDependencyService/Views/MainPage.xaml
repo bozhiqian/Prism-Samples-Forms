@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsingDependencyService.Views.MainPage"
+             Title="{Binding Title}"
+             Padding="20"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:UsingDependencyService.ViewModels;assembly=UsingDependencyService"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:MainPageViewModel,IsDesignTimeCreatable=True}">
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <StackLayout.HorizontalOptions>
+            <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="FillAndExpand" />
+        </StackLayout.HorizontalOptions>
+        <StackLayout.Margin>
+            <OnPlatform x:TypeArguments="Thickness" iOS="0,0,0,0" Android="0,0,0,0" WinPhone="20,0,20,0" />
+        </StackLayout.Margin>
+        <Entry Text="{Binding TextToSay}" VerticalOptions="Center">
+            <Entry.HorizontalOptions>
+                <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="FillAndExpand" />
+            </Entry.HorizontalOptions>
+        </Entry>
+        <Button Command="{Binding SpeakCommand}" Text="Speak"/>
+    </StackLayout>
+
+</ContentPage>
