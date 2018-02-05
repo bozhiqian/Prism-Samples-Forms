@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:c="clr-namespace:ContosoCookbook.Converters;assembly=ContosoCookbook"
+             x:Class="ContosoCookbook.Views.RecipePage"
+             Title="{Binding Recipe.Title}"
+             Padding="10"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ContosoCookbook.ViewModels;assembly=ContosoCookbook"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:RecipePageViewModel,IsDesignTimeCreatable=True}">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <c:ListConverter x:Key="ListConverter" />
+      <c:LocalImagePathConverter x:Key="LocalImagePathConverter" />
+      <Color x:Key="CaptionColor">#FFFF8300</Color>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <Grid x:Name="LayoutRoot" Padding="16">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <Label Text="{Binding Recipe.Title}" FontSize="Large" LineBreakMode="WordWrap">
+      <Label.IsVisible>
+        <OnPlatform x:TypeArguments="x:Boolean" iOS="False" Android="False" WinPhone="True" />
+      </Label.IsVisible>
+    </Label>
+
+    <ScrollView Grid.Row="1">
+      <StackLayout>
+        <Image Source="{Binding Recipe.ImagePath, Converter={StaticResource LocalImagePathConverter}}" Aspect="AspectFill" />
+        <Label Text="{Binding Recipe.Description}" FontSize="Medium" LineBreakMode="WordWrap" />
+        <StackLayout Orientation="Horizontal" Padding="0,16,0,0">
+          <Label Text="Preparation time:" FontSize="Medium" FontAttributes="Italic" />
+          <Label Text="{Binding Recipe.PrepTime}" FontSize="Medium" FontAttributes="Italic" />
+          <Label Text="minutes" FontSize="Medium" FontAttributes="Italic" />
+        </StackLayout>
+        <StackLayout Padding="0,16,0,0">
+          <Label FontSize="Large" TextColor="{StaticResource CaptionColor}" Text="Ingredients" />
+          <Label FontSize="Small" Text="{Binding Recipe.Ingredients, Converter={StaticResource ListConverter}}" LineBreakMode="WordWrap" />
+        </StackLayout>
+        <StackLayout Padding="0,16,0,0">
+          <Label FontSize="Large" TextColor="{StaticResource CaptionColor}" Text="Directions" />
+          <Label FontSize="Small" Text="{Binding Recipe.Directions}" LineBreakMode="WordWrap" />
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </Grid>    
+
+</ContentPage>
+
